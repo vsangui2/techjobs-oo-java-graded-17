@@ -56,7 +56,6 @@ public class JobTest {
         String jobString = job.toString();
         String lineSeparator = System.lineSeparator();
 
-        // Check if the string contains correct labels and data
         assertTrue(jobString.contains("ID: "));
         assertTrue(jobString.contains("Name: Product tester"));
         assertTrue(jobString.contains("Employer: ACME"));
@@ -72,7 +71,6 @@ public class JobTest {
         String jobString = job.toString();
         String lineSeparator = System.lineSeparator();
 
-        // Check if the string contains correct labels and "Data not available" for empty fields
         assertTrue(jobString.contains("ID: "));
         assertTrue(jobString.contains("Name: Data not available"));
         assertTrue(jobString.contains("Employer: Data not available"));
