@@ -128,11 +128,3 @@ public class Job {
                 coreCompetencyString + lineSeparator;
     }
 }
-//    @Test
-//    public void testToStringStartsAndEndsWithNewLine() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-//        Job job = createJob("Web Developer", "LaunchCode", "StL", "Back-end developer", "Java");
-//        String firstChar = String.valueOf(job.toString().charAt(0));
-//        String lastChar = String.valueOf(job.toString().charAt(job.toString().length()-1));
-//        assertEquals(firstChar, lineSeparator());
-//        assertEquals(lastChar, lineSeparator());
-//}

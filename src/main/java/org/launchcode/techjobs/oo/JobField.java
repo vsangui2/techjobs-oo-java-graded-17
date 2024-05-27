@@ -7,19 +7,16 @@ public abstract class JobField {
     private static int nextId = 1;
     private String value;
 
-    // Constructor for generating unique ID
     public JobField() {
         this.id = nextId;
         nextId++;
     }
 
-    // Constructor to set the value field
     public JobField(String value) {
         this();
         this.value = value;
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -32,7 +29,6 @@ public abstract class JobField {
         this.value = value;
     }
 
-    // Custom methods
     @Override
     public String toString() {
         return value;

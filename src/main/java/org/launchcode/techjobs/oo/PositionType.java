@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class PositionType extends JobField {
 
-    // Constructor that accepts a value
     public PositionType(String value) {
         super(value);
     }

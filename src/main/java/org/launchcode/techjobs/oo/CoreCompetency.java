@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class CoreCompetency extends JobField {
 
-    // Constructor that accepts a value
     public CoreCompetency(String value) {
         super(value);
     }
