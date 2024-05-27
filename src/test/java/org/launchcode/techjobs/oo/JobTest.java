@@ -40,4 +40,44 @@ public class JobTest {
         assertFalse(job1.equals(job2));
     }
 
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String jobString = job.toString();
+        String lineSeparator = System.lineSeparator();
+
+        assertEquals(lineSeparator, jobString.substring(0, lineSeparator.length()));
+        assertEquals(lineSeparator, jobString.substring(jobString.length() - lineSeparator.length()));
+    }
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        String jobString = job.toString();
+        String lineSeparator = System.lineSeparator();
+
+        // Check if the string contains correct labels and data
+        assertTrue(jobString.contains("ID: "));
+        assertTrue(jobString.contains("Name: Product tester"));
+        assertTrue(jobString.contains("Employer: ACME"));
+        assertTrue(jobString.contains("Location: Desert"));
+        assertTrue(jobString.contains("Position Type: Quality control"));
+        assertTrue(jobString.contains("Core Competency: Persistence"));
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job job = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+
+        String jobString = job.toString();
+        String lineSeparator = System.lineSeparator();
+
+        // Check if the string contains correct labels and "Data not available" for empty fields
+        assertTrue(jobString.contains("ID: "));
+        assertTrue(jobString.contains("Name: Data not available"));
+        assertTrue(jobString.contains("Employer: Data not available"));
+        assertTrue(jobString.contains("Location: Data not available"));
+        assertTrue(jobString.contains("Position Type: Data not available"));
+        assertTrue(jobString.contains("Core Competency: "));
+    }
 }
